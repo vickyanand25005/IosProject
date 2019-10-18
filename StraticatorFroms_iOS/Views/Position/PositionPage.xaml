@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StraticatorFroms_iOS.Views.PositionPage"
+             xmlns:local="clr-namespace:StraticatorFroms_iOS.Views.Custom"
+             xmlns:localForm="clr-namespace:StraticatorFroms_iOS"
+             xmlns:controls="clr-namespace:StraticatorFroms_iOS.Controls"
+             BackgroundImage="@drawable/background1">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" x:Name="MainLayout">
+            <StackLayout Orientation="Horizontal" >
+                <Label x:Name="lblPositions" Text="Positions" FontSize="Title" TextColor="White" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Image x:Name="imgStatus" HeightRequest="30" WidthRequest="30" />
+                <Button x:Name="btnAid" BackgroundColor="#E51400" VerticalOptions="End" HorizontalOptions="EndAndExpand"  FontAttributes="Bold" TextColor="White" Clicked="BtnAid_Clicked" />
+            </StackLayout>
+            <Label x:Name="lblSelectAccount" Text="Select Account" TextColor="White"/>
+            <localForm:CustomPickerRenderer x:Name="cbAccount" SelectedIndexChanged="CbAccount_SelectedIndexChanged" WidthRequest="500" BackgroundColor="White" HorizontalOptions="FillAndExpand" Image="arrow.png"/>
+            <Grid RowSpacing="5" ColumnSpacing="5" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout BackgroundColor="#1A1A1A" Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0" >
+                    <Label x:Name="lblEquity" Text="Equity" TextColor="White" 
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand" BackgroundColor="#1A1A1A"/>
+
+                    <Label x:Name="lblEquityValue" 
+                       TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="2" BackgroundColor="#000000" Grid.Row="0" Grid.Column="2">
+                    <Label x:Name="lblInvested"  
+                       Text="Invested:"
+                       TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+
+                    <Label x:Name="lblInvestedValue" 
+                           TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0" BackgroundColor="#000000">
+                    <Label x:Name="lblUnrealizedPl"  
+                       Text="Unrealized PL:"
+                       TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+
+                    <Label x:Name="lblUnrealizedPlValue" 
+                       
+                       TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="2" BackgroundColor="#1A1A1A">
+                    <Label x:Name="lblMarginUsed" 
+                       Text="Margin Used:"
+                       TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+
+                    <Label x:Name="lblMarginUsedValue" 
+                       
+                       TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" BackgroundColor="#1A1A1A">
+                    <Label x:Name="lblBalance" 
+                       Text="Balance:"
+                       TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+
+                    <Label x:Name="lblBalanceValue" 
+                       
+                       TextColor="White"
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="2" BackgroundColor="#000000">
+
+                    <Label x:Name="lblMarginUsed1"  Text="Margin" TextColor="White"  
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" BackgroundColor="#000000" />
+
+                    <Label x:Name="lblMarginUsed1Value" TextColor="White" 
+                   HorizontalOptions="FillAndExpand"  
+                   VerticalOptions="FillAndExpand" BackgroundColor="#000000" />
+                </StackLayout>
+
+            </Grid>
+            <controls:CircularProgressControl x:Name="progressControl" IsVisible="False" Progress="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60" HeightRequest="60"/>
+            <ListView x:Name="lstView" ItemsSource="{Binding Positions}" SeparatorColor="Gray" HasUnevenRows="True" HorizontalOptions="Center"  ItemSelected="LstView_ItemSelected" ItemTapped="LstView_ItemTapped" SelectionMode="Single">
+                <ListView.Header>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="10*" />
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="7*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Symbol"  x:Name="lblSymbol" FontSize="Medium" FontAttributes="Bold" TextColor="White" Grid.Column="0" Grid.Row="0" />
+                        <Label Text="Volume" x:Name="lblVolume" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                        <Label Text="Open Price" x:Name="lblOpen" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="2" Grid.Row="0" />
+                        <Label Text="Cur. Price" x:Name="lblPrice" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="3" Grid.Row="0"/>
+                        <Label Text="P/L" TextColor="White" x:Name="lblPl" FontSize="Medium" FontAttributes="Bold" Grid.Column="4" Grid.Row="0" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="40">
+                            <ViewCell.View>
+                                <Grid RowSpacing="0" ColumnSpacing="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="10*"/>
+                                        <ColumnDefinition Width="10*"/>
+                                        <ColumnDefinition Width="7*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Symbol}" Grid.Column="0" HorizontalTextAlignment="Center" MinimumWidthRequest="30" TextColor="White" BackgroundColor="{Binding TextColor}"/>
+                                    <Label Text="{Binding Volume}"  Grid.Column="1" HorizontalTextAlignment="Center" MinimumWidthRequest="30" TextColor="White" BackgroundColor="{Binding TextColor2}"/>
+                                    <Label Text="{Binding OpenPrice}" Grid.Column="2" HorizontalTextAlignment="Center" MinimumWidthRequest="30" TextColor="White" BackgroundColor="{Binding TextColor2}"/>
+                                    <Label Text="{Binding CurrentPrice}"  Grid.Column="3" MinimumWidthRequest="30" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="{Binding TextColor2}"/>
+                                    <Label Text="{Binding PL}" Grid.Column="4" MinimumWidthRequest="30" TextColor="White" HorizontalTextAlignment="Center" BackgroundColor="{Binding TextColor2}"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>  

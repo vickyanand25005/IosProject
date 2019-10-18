@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StraticatorFroms_iOS.Views.Custom.PopMenu">
+    <ContentPage.Content>
+        <Frame WidthRequest="400" HeightRequest="300" HorizontalOptions="Center" VerticalOptions="EndAndExpand" BackgroundColor="White">
+            <StackLayout Spacing="20" VerticalOptions="Center">
+                <Label Text="Ticket" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="Large" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Ticket_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Trade" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="Large" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Trade_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Watchlist" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="Large" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Watchlist_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Close" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="Large" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Close_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Copy" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="Large" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Copy_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

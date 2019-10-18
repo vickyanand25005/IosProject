@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImage="@drawable/background1"
+             xmlns:local="clr-namespace:StraticatorFroms_iOS"
+             x:Class="StraticatorFroms_iOS.Views.WatchListSettings.OrganizeSymbolControlPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10" Orientation="Vertical">
+            <BoxView></BoxView>
+            <Label x:Name="lblTitle" Text="Add Symbol" FontSize="Title" TextColor="White" FontAttributes="Bold"/>
+            <local:CustomPickerRenderer x:Name="pkrSymbolType"  SelectedIndexChanged="PkrSymbolType_SelectedIndexChanged" BackgroundColor="White" HorizontalOptions="FillAndExpand" />
+            <local:CustomPickerRenderer x:Name="pkrExchangeType" SelectedIndexChanged="PkrExchangeType_SelectedIndexChanged" WidthRequest="500" BackgroundColor="White" HorizontalOptions="FillAndExpand" Image="arrow.png"/>
+            <local:CustomPickerRenderer x:Name="pkrSymbol" BackgroundColor="White" SelectedIndexChanged="PkrSymbol_SelectedIndexChanged" HorizontalOptions="FillAndExpand" />
+            <StackLayout Orientation="Horizontal" Padding="25" >
+                <Button Text="SAVE" x:Name="btnSave"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnSave_Clicked"/>
+                <Button Text="CANCEL" x:Name="btnCancel"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnCancel_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

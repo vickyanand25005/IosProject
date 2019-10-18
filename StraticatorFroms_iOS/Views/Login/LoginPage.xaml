@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StraticatorFroms_iOS.Views.Login.Login"
+             xmlns:local="clr-namespace:StraticatorFroms_iOS"
+             xmlns:controls="clr-namespace:StraticatorFroms_iOS.Controls"
+             
+             BackgroundImage="bg.png">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="20">
+            <Image HorizontalOptions="Center" WidthRequest="500" HeightRequest="100" Source="logo_new.png"/>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal" >
+                    <controls:SegmentedBarControl SelectedItemChanged="Handle_SelectedItemChanged" 
+                             x:Name="segment" 
+                             AutoScroll="true"
+                             TextColor="White" 
+                             FontAttributes="Bold"
+                             SelectedTextColor="PaleTurquoise"
+                             SelectedLineColor="SandyBrown"/>
+                </StackLayout>
+                <Label x:Name="lblUserName" Text="UserName"  FontSize="Large" FontAttributes="Bold" TextColor="White"/>
+                <local:CustomEntry x:Name="txtUserName"  Text="{Binding UserId}"  BackgroundColor="White" PlaceholderColor="White" HeightRequest="40" />
+                <Label x:Name="lblPassword" Text="Password" TextColor="White" FontSize="Large" FontAttributes="Bold"/>
+                <local:CustomEntry x:Name="txtPassword" BackgroundColor="White" Text="{Binding Password}" PlaceholderColor="White" HeightRequest="40" IsPassword="True" />
+                <Label FontSize="Large" FontAttributes="Bold"/>
+                <Button Text="Login" x:Name="btnLogin" BackgroundColor="#E51400" TextColor="White"  FontAttributes="Bold" FontSize="Medium" HeightRequest="40" HorizontalOptions="FillAndExpand" Clicked="OnLoginButtonClicked"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <BoxView></BoxView>
+                <Label x:Name="lnkCreateAccount" HorizontalOptions="Start" FontSize="Subtitle" FontAttributes="Bold" VerticalOptions="CenterAndExpand" Text="Create Demo Account" TextColor="White" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="lnkCreateAccount_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="|" TextColor="White" FontSize="Large" VerticalTextAlignment="Center"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                <!--<BoxView WidthRequest="0.5" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" BackgroundColor="White"/>-->
+
+                <Label x:Name="lnkForgotPassword" Text="Forgot Password?" FontSize="Subtitle"  FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGesture_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lnkBecomeCustomer" FontSize="Subtitle" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"  VerticalOptions="CenterAndExpand" Text="Become a Client" TextColor="White" TextDecorations="Underline" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="lnkBecomeCustomer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

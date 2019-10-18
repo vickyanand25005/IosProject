@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:StraticatorFroms_iOS.Views.Custom"
+             BackgroundImage="@drawable/background1"
+             x:Class="StraticatorFroms_iOS.Views.CopyTradePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="lblTitle" Text="Copy Trade" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontAttributes="Bold" FontSize="Title" TextColor="White"/>
+            <ListView x:Name="lstView" ItemsSource="{Binding Followers}" SeparatorColor="Gray" HasUnevenRows="True" HorizontalOptions="Center"  ItemSelected="LstView_ItemSelected" ItemTapped="LstView_ItemTapped" SelectionMode="Single">
+                <ListView.Header>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="18*" />
+                            <ColumnDefinition Width="12*" />
+                            <ColumnDefinition Width="8*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Name"  x:Name="lblName" FontSize="Medium" FontAttributes="Bold" TextColor="White" Grid.Column="0" Grid.Row="0" />
+                        <Label Text="Account No" x:Name="lblAccount" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                        <Label Text="Approved" x:Name="lblApproved" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="2" Grid.Row="0" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:CustomTextCellRendererView Height="40">
+                            <ViewCell.View>
+                                <Grid RowSpacing="0" ColumnSpacing="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="18*"/>
+                                        <ColumnDefinition Width="12*"/>
+                                        <ColumnDefinition Width="8*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Name}" Grid.Column="0" MinimumWidthRequest="30" TextColor="White"/>
+                                    <Label Text="{Binding Aid}"   Grid.Column="1" MinimumWidthRequest="30" TextColor="White" />
+                                    <Label Text="{Binding Active}"  Grid.Column="2" MinimumWidthRequest="30" TextColor="White"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </local:CustomTextCellRendererView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal" Padding="25" >
+                <Button Text="Edit" x:Name="btnEdit"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnEdit_Clicked"/>
+                <Button Text="Delete" x:Name="btnDelete"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnDelete_Clicked"/>
+                <Button Text="Follow" x:Name="btnFollow"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnFollow_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

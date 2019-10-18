@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImage="@drawable/background1"
+             xmlns:local="clr-namespace:StraticatorFroms_iOS"
+             x:Class="StraticatorFroms_iOS.Views.Register.RegisterUserPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="10" Spacing="20">
+            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" HeightRequest="1200" >
+                    <BoxView></BoxView>
+                    <Label Text="Register" x:Name="lblRegister" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontAttributes="Bold" FontSize="Title" TextColor="White"/>
+                    <Label Text="Name:" x:Name="lblName" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontAttributes="Bold" FontSize="Large"  TextColor="White"/>
+                    <local:CustomEntry x:Name="txtName" BackgroundColor="White" PlaceholderColor="White" HeightRequest="40"/>
+                    <Label Text="Email:" x:Name="lblEmail" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontAttributes="Bold" FontSize="Large" TextColor="White"/>
+                    <local:CustomEntry x:Name="txtEmail" BackgroundColor="White" PlaceholderColor="White" HeightRequest="40" />
+                    <Label Text="Phone:" x:Name="lblPhone" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontAttributes="Bold" FontSize="Large" TextColor="White"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Picker WidthRequest="120" x:Name="pkrCountryCode" BackgroundColor="White" SelectedIndexChanged="PkrCountryCode_SelectedIndexChanged"/>
+                        <local:CustomEntry x:Name="txtPhone" BackgroundColor="White" WidthRequest="280" PlaceholderColor="White" HeightRequest="40" />
+                    </StackLayout>
+                    <Label Text="Nationality:" x:Name="lblNationality" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontAttributes="Bold" FontSize="Large" TextColor="White"/>
+                    <Picker x:Name="pkrNationality" BackgroundColor="White" HeightRequest="40" SelectedIndexChanged="Pkrnationality_SelectionChanged"/>
+                    <Label Text="LoginId:" x:Name="lblLoginId" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontAttributes="Bold" FontSize="Large" TextColor="White"/>
+                    <local:CustomEntry x:Name="txtLogin" BackgroundColor="White" PlaceholderColor="White" HeightRequest="40" />
+                    <Label x:Name="lblPassword" Text="Password:" TextColor="White" FontSize="Large" FontAttributes="Bold"/>
+                    <local:CustomEntry x:Name="txtPassword" BackgroundColor="White" PlaceholderColor="White" HeightRequest="40" IsPassword="True" />
+                    <Label x:Name="lblConfirmPassword" Text="Confirm Password:" TextColor="White" FontSize="Large" FontAttributes="Bold"/>
+                    <local:CustomEntry x:Name="txtConfirmPassword" BackgroundColor="White" PlaceholderColor="White" HeightRequest="40" IsPassword="True" />
+                    <StackLayout Orientation="Horizontal" Padding="25" >
+                        <Button Text="Register" x:Name="btnRegister"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnRegister_Clicked"/>
+                        <Button Text="Cancel" x:Name="btnCancel"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnCancel_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

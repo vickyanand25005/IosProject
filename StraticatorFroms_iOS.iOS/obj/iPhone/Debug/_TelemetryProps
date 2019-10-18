@@ -1,0 +1,6 @@
+EnableLLVM=False
+UseConcurrentGC=False
+LinkerBehavior=SdkOnly
+AdditionalSupportedEncodings=
+HttpClientImplementation=NSUrlSessionHandler
+SupportedArchitectures=ARMv7, ARM64

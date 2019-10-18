@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:StraticatorFroms_iOS"
+             BackgroundImage="@drawable/background1"
+             x:Class="StraticatorFroms_iOS.Views.CopyTrade.CopyTradeEditPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Label x:Name="lblTitle" Text="Copy Trade Edit" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontAttributes="Bold" FontSize="Title" TextColor="White"/>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label x:Name="lblPfid" Text="PFID:" WidthRequest="100" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="Large" TextColor="White"/>
+                <Label x:Name="lblPfidValue" Text="10.0" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontSize="Large" TextColor="White"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label x:Name="lblName" Text="Name:" WidthRequest="100" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="Large" TextColor="White"/>
+                <Label x:Name="lblNameValue" Text="10.0" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontSize="Large" TextColor="White"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label x:Name="lblAccount" Text="Account:" WidthRequest="100" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="Large" TextColor="White"/>
+                <Label x:Name="lblAccountValue" Text="10.0" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"  FontSize="Large" TextColor="White"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label x:Name="lblAmount" Text="Amount:" WidthRequest="100" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="Large" TextColor="White"/>
+                <local:CustomEntry x:Name="txtAmount" BackgroundColor="White" PlaceholderColor="White" WidthRequest="180" HeightRequest="40" HorizontalOptions="Start" VerticalOptions="Start"/>
+                <Label x:Name="lblCurrency" WidthRequest="50" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" FontSize="Large" TextColor="White"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Label x:Name="lblActive" Text="Active:" WidthRequest="100" TextColor="White" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" FontSize="Large"/>
+                <CheckBox x:Name="chkTrailingStop" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="25" >
+                <Button Text="Save" x:Name="btnSave"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnSave_Clicked"/>
+                <Button Text="Cancel" x:Name="btnCancel"  TextColor="White"  FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" Clicked="BtnCancel_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

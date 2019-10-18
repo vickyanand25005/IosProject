@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImage="@drawable/background1"
+             xmlns:local="clr-namespace:StraticatorFroms_iOS.Views.Custom"
+             xmlns:localForm="clr-namespace:StraticatorFroms_iOS"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             x:Class="StraticatorFroms_iOS.Views.Reports.Symbol.SymbolReportPage">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <StackLayout Orientation="Horizontal" x:Name="gridFilter1">
+                <Label x:Name="lblTitle" Text="Symbol" FontSize="Title" WidthRequest="250" TextColor="White" FontAttributes="Bold"/>
+                <Button x:Name="btnAid" BackgroundColor="#E51400"  HorizontalOptions="EndAndExpand"  FontAttributes="Bold" TextColor="White" Clicked="BtnAid_Clicked" />
+                <Image x:Name="menu" Source="menu.png" HeightRequest="30" HorizontalOptions="EndAndExpand" WidthRequest="30">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" x:Name="gridFilter2" HeightRequest="50">
+                <Label x:Name="lblPerDate" Text="Per Date:" FontSize="Medium" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="Center" HorizontalTextAlignment="Start" FontAttributes="Bold"/>
+                <localForm:CustomDatePicker x:Name="dtpFromDate"  BackgroundColor="Black" TextColor="White" WidthRequest="130" VerticalOptions="Center"  HorizontalOptions="Center"/>
+                <Button Text="Search" x:Name="btnSearch"  TextColor="White"  FontAttributes="Bold" FontSize="Medium" HorizontalOptions="EndAndExpand"  WidthRequest="135"  Clicked="BtnSearch_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" >
+                <chart:SfChart x:Name="sfChart" HeightRequest="250">
+                    <chart:SfChart.Legend>
+                        <chart:ChartLegend IsIconVisible="True" IconHeight="20" IconWidth="20"/>
+                    </chart:SfChart.Legend>
+
+                    <chart:SfChart.Series>
+                        <chart:PieSeries  x:Name="doughnutSeries" EnableAnimation="true">
+                            <chart:PieSeries.DataMarker>
+                                <chart:ChartDataMarker ShowLabel="True">
+                                </chart:ChartDataMarker>
+                            </chart:PieSeries.DataMarker>
+                        </chart:PieSeries>
+                    </chart:SfChart.Series>
+                </chart:SfChart>
+            </StackLayout>
+
+            <ListView x:Name="lstView" ItemsSource="{Binding SymbolList}" SeparatorColor="Gray" HasUnevenRows="True" HorizontalOptions="Center"  ItemSelected="LstView_ItemSelected"  SelectionMode="Single">
+                <ListView.Header>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="8*" />
+                            <ColumnDefinition Width="8*"/>
+                            <ColumnDefinition Width="12*" />
+                            <ColumnDefinition Width="8*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Symbol" x:Name="lblSymbol" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="0" Grid.Row="0" />
+                        <Label Text="Volume" x:Name="lblVolume" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                        <Label Text="Amount USD" TextColor="White" x:Name="lblPrice" FontSize="Medium" FontAttributes="Bold" Grid.Column="2" Grid.Row="0" />
+                        <Label Text="%" TextColor="White" x:Name="lblPer" FontSize="Medium" FontAttributes="Bold" Grid.Column="3" Grid.Row="0" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:CustomTextCellRendererView Height="40">
+                            <ViewCell.View>
+                                <Grid RowSpacing="0" ColumnSpacing="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10*" />
+                                        <ColumnDefinition Width="8*"/>
+                                        <ColumnDefinition Width="12*" />
+                                        <ColumnDefinition Width="8*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" />
+                                    </Grid.RowDefinitions>
+                                    <Label Text="{Binding Currency}" Grid.Column="0" MinimumWidthRequest="30" TextColor="White"/>
+                                    <Label Text="{Binding Volume}"  Grid.Column="1" MinimumWidthRequest="30" TextColor="White" />
+                                    <Label Text="{Binding Amount_USD}" Grid.Column="2" MinimumWidthRequest="30" TextColor="White"/>
+                                    <Label Text="{Binding Pct}" Grid.Column="3" MinimumWidthRequest="30" TextColor="White"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </local:CustomTextCellRendererView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:local="clr-namespace:StraticatorFroms_iOS.Views.Custom"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImage="@drawable/background1"
+             x:Class="StraticatorFroms_iOS.Views.WatchlistPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" x:Name="MainLayout">
+            <StackLayout Orientation="Horizontal" >
+                <Label x:Name="lblPositions" Text="Watchlist" FontSize="Title" TextColor="White" FontAttributes="Bold"/>
+                <Image x:Name="imgStatus" HeightRequest="30" WidthRequest="30" />
+                <Button x:Name="btnAid" BackgroundColor="#E51400" VerticalOptions="End" HorizontalOptions="EndAndExpand"  FontAttributes="Bold" TextColor="White" Clicked="BtnAid_Clicked" />
+                <Image x:Name="menu" Source="menu.png" HeightRequest="30" WidthRequest="30">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <ListView x:Name="lstView" ItemsSource="{Binding DisplayPrices}" SeparatorColor="Gray" HasUnevenRows="True" HorizontalOptions="Center"  ItemSelected="LstView_ItemSelected" ItemTapped="LstView_ItemTapped" SelectionMode="Single">
+                <ListView.Header>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*" />
+                            <ColumnDefinition Width="10*" />
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="7*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Symbol"  x:Name="lblSymbol" FontSize="Medium" FontAttributes="Bold" TextColor="White" Grid.Column="0" Grid.Row="0" />
+                        <Label Text="Bid" x:Name="lblBid" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="1" Grid.Row="0"/>
+                        <Label Text="Ask" x:Name="lblAsk" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="2" Grid.Row="0" />
+                        <Label Text="Spread" x:Name="lblSpread" FontSize="Medium" TextColor="White" FontAttributes="Bold" Grid.Column="3" Grid.Row="0"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="40">
+                            <ViewCell.View>
+                                <Grid RowSpacing="0" ColumnSpacing="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*"/>
+                                        <ColumnDefinition Width="10*"/>
+                                        <ColumnDefinition Width="10*"/>
+                                        <ColumnDefinition Width="7*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Symbol}" Grid.Column="0" MinimumWidthRequest="30" TextColor="White"/>
+                                    <Label Text="{Binding Bid}" BackgroundColor="{Binding BidColor}"  Grid.Column="1" MinimumWidthRequest="30" TextColor="White" />
+                                    <Label Text="{Binding Ask}" BackgroundColor="{Binding AskColor}" Grid.Column="2" MinimumWidthRequest="30" TextColor="White"/>
+                                    <Label Text="{Binding Spread}"  Grid.Column="3" MinimumWidthRequest="30" TextColor="White" />
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

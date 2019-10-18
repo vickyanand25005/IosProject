@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImage="@drawable/background1"
+             x:Class="StraticatorFroms_iOS.Views.Reports.Order.OrderHistoryDetailPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblOrderId" WidthRequest="200" TextColor="White" FontSize="Large" Text="Order Id:"/>
+                <Label x:Name="lblOrderIdValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblCreatedTime" WidthRequest="200" TextColor="White" FontSize="Large" Text="Created Time:"/>
+                <Label x:Name="lblCreatedTimeValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblSymbol" WidthRequest="200" TextColor="White" FontSize="Large" Text="Symbol:"/>
+                <Label x:Name="lblSymbolValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblPrice" WidthRequest="200" TextColor="White" FontSize="Large" Text="Price:"/>
+                <Label x:Name="lblPriceValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblVolume" WidthRequest="200" TextColor="White" FontSize="Large" Text="Volume:"/>
+                <Label x:Name="lblVolumeValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblSL" WidthRequest="200" TextColor="White" FontSize="Large" Text="S/L:"/>
+                <Label x:Name="lblSLValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblTP" WidthRequest="200" TextColor="White" FontSize="Large" Text="T/P:"/>
+                <Label x:Name="lblTPValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblExpiry" WidthRequest="200" TextColor="White" FontSize="Large" Text="Expiry:"/>
+                <Label x:Name="lblExpiryValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblOrderType" WidthRequest="200" TextColor="White" FontSize="Large" Text="Order Type:"/>
+                <Label x:Name="lblOrderTypeValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblOrderOrigin" WidthRequest="200" TextColor="White" FontSize="Large" Text="Order Origin:"/>
+                <Label x:Name="lblOrderOriginValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblAction" WidthRequest="200" TextColor="White" FontSize="Large" Text="Action:"/>
+                <Label x:Name="lblActionValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblTime" WidthRequest="200" TextColor="White" FontSize="Large" Text="Time:"/>
+                <Label x:Name="lblTimeValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblOrderOriginId" WidthRequest="200" TextColor="White" FontSize="Large" Text="Origin Order Id:"/>
+                <Label x:Name="lblOrderOriginIdValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblRelatedOrderId" WidthRequest="200" TextColor="White" FontSize="Large" Text="Related Order Id:"/>
+                <Label x:Name="lblRelatedOrderIdValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblTrack" WidthRequest="200" TextColor="White" FontSize="Large" Text="Track:"/>
+                <Label x:Name="lblTrackValue" TextColor="White" FontSize="Large" />
+            </StackLayout>
+
+            <Button x:Name="btnClose" BackgroundColor="#E51400" VerticalOptions="Center" HorizontalOptions="Center" Text="Close" FontAttributes="Bold" TextColor="White" Clicked="BtnClose_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

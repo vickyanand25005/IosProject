@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              xmlns:local="clr-namespace:StraticatorFroms_iOS.Views.Custom"
+             xmlns:localForm="clr-namespace:StraticatorFroms_iOS"
+             xmlns:controls="clr-namespace:StraticatorFroms_iOS.Controls"
+             BackgroundImage="@drawable/background1"
+             x:Class="StraticatorFroms_iOS.Views.NoNetworkPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image HorizontalOptions="Fill" VerticalOptions="Fill" WidthRequest="500" HeightRequest="100" Source="logo_new.jpg"/>
+            <Label x:Name="lblMsg" Text="Welcome to Xamarin.Forms!" TextColor="White"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
